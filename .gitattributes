@@ -1,0 +1,5 @@
+# Auto detect text files and perform LF normalization
+*.h linguist-language=Objective-C++
+*.mm linguist-language=Objective-C++
+*.cpp linguist-language=Objective-C++
+
