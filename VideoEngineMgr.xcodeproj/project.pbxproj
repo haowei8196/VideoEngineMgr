@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AE6DA15B1E7A3CCD00D1C5CF /* VideoEngineMgr.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA1591E7A3CCD00D1C5CF /* VideoEngineMgr.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AE6DA1651E7A3D6800D1C5CF /* VideoDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA1611E7A3D6800D1C5CF /* VideoDefines.h */; };
+		AE6DA1661E7A3D6800D1C5CF /* VideoEngineMgr.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA1621E7A3D6800D1C5CF /* VideoEngineMgr.mm */; };
+		AE6DA1671E7A3D6800D1C5CF /* VideoFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA1631E7A3D6800D1C5CF /* VideoFrame.h */; };
+		AE6DA1681E7A3D6800D1C5CF /* VideoFrame.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA1641E7A3D6800D1C5CF /* VideoFrame.mm */; };
+		AE6DA1731E7A3DD500D1C5CF /* open_gles20.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA16D1E7A3DD500D1C5CF /* open_gles20.h */; };
+		AE6DA1741E7A3DD500D1C5CF /* open_gles20.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA16E1E7A3DD500D1C5CF /* open_gles20.mm */; };
+		AE6DA1751E7A3DD500D1C5CF /* VideoRenderFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA16F1E7A3DD500D1C5CF /* VideoRenderFrame.h */; };
+		AE6DA1761E7A3DD500D1C5CF /* VideoRenderFrame.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA1701E7A3DD500D1C5CF /* VideoRenderFrame.mm */; };
+		AE6DA1771E7A3DD500D1C5CF /* VideoRenderIosView.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA1711E7A3DD500D1C5CF /* VideoRenderIosView.h */; };
+		AE6DA1781E7A3DD500D1C5CF /* VideoRenderIosView.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA1721E7A3DD500D1C5CF /* VideoRenderIosView.mm */; };
+		AE6DA17F1E7A3DE100D1C5CF /* H264Decoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA1791E7A3DE100D1C5CF /* H264Decoder.h */; };
+		AE6DA1801E7A3DE100D1C5CF /* H264Decoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA17A1E7A3DE100D1C5CF /* H264Decoder.mm */; };
+		AE6DA1811E7A3DE100D1C5CF /* H264Encoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA17B1E7A3DE100D1C5CF /* H264Encoder.h */; };
+		AE6DA1821E7A3DE100D1C5CF /* H264Encoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA17C1E7A3DE100D1C5CF /* H264Encoder.mm */; };
+		AE6DA1831E7A3DE100D1C5CF /* H264Packetizer.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA17D1E7A3DE100D1C5CF /* H264Packetizer.h */; };
+		AE6DA1841E7A3DE100D1C5CF /* H264Packetizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA17E1E7A3DE100D1C5CF /* H264Packetizer.mm */; };
+		AE6DA1871E7A3DED00D1C5CF /* VideoCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA1851E7A3DED00D1C5CF /* VideoCapture.h */; };
+		AE6DA1881E7A3DED00D1C5CF /* VideoCapture.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA1861E7A3DED00D1C5CF /* VideoCapture.mm */; };
+		AE6DA18F1E7A3DF700D1C5CF /* LocalVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA1891E7A3DF700D1C5CF /* LocalVideo.h */; };
+		AE6DA1901E7A3DF700D1C5CF /* LocalVideo.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA18A1E7A3DF700D1C5CF /* LocalVideo.mm */; };
+		AE6DA1911E7A3DF700D1C5CF /* RemoteVideo.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA18B1E7A3DF700D1C5CF /* RemoteVideo.h */; };
+		AE6DA1921E7A3DF700D1C5CF /* RemoteVideo.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA18C1E7A3DF700D1C5CF /* RemoteVideo.mm */; };
+		AE6DA1931E7A3DF700D1C5CF /* VideoBase.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA18D1E7A3DF700D1C5CF /* VideoBase.h */; };
+		AE6DA1941E7A3DF700D1C5CF /* VideoBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA18E1E7A3DF700D1C5CF /* VideoBase.mm */; };
+		AE6DA19B1E7A3E3000D1C5CF /* H264Decoderlmpl.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA1971E7A3E3000D1C5CF /* H264Decoderlmpl.h */; };
+		AE6DA19C1E7A3E3000D1C5CF /* H264Decoderlmpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA1981E7A3E3000D1C5CF /* H264Decoderlmpl.mm */; };
+		AE6DA19D1E7A3E3000D1C5CF /* H264EncoderImpl.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA1991E7A3E3000D1C5CF /* H264EncoderImpl.h */; };
+		AE6DA19E1E7A3E3000D1C5CF /* H264EncoderImpl.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA19A1E7A3E3000D1C5CF /* H264EncoderImpl.mm */; };
+		AE6DA1A41E7A3E4200D1C5CF /* H264VideoToolboxDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA19F1E7A3E4200D1C5CF /* H264VideoToolboxDecoder.h */; };
+		AE6DA1A51E7A3E4200D1C5CF /* H264VideoToolboxDecoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA1A01E7A3E4200D1C5CF /* H264VideoToolboxDecoder.mm */; };
+		AE6DA1A61E7A3E4200D1C5CF /* H264VideoToolboxEncoder.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA1A11E7A3E4200D1C5CF /* H264VideoToolboxEncoder.h */; };
+		AE6DA1A71E7A3E4200D1C5CF /* H264VideoToolboxEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA1A21E7A3E4200D1C5CF /* H264VideoToolboxEncoder.m */; };
+		AE6DA1A81E7A3E4200D1C5CF /* H264VideoToolboxEncoder.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA1A31E7A3E4200D1C5CF /* H264VideoToolboxEncoder.mm */; };
+		AE6DA1AB1E7A52C100D1C5CF /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = AE6DA1A91E7A52C100D1C5CF /* Utils.h */; };
+		AE6DA1AC1E7A52C100D1C5CF /* Utils.mm in Sources */ = {isa = PBXBuildFile; fileRef = AE6DA1AA1E7A52C100D1C5CF /* Utils.mm */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AE6DA1561E7A3CCD00D1C5CF /* VideoEngineMgr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VideoEngineMgr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AE6DA1591E7A3CCD00D1C5CF /* VideoEngineMgr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoEngineMgr.h; sourceTree = "<group>"; };
+		AE6DA15A1E7A3CCD00D1C5CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE6DA1611E7A3D6800D1C5CF /* VideoDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoDefines.h; sourceTree = "<group>"; };
+		AE6DA1621E7A3D6800D1C5CF /* VideoEngineMgr.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoEngineMgr.mm; sourceTree = "<group>"; };
+		AE6DA1631E7A3D6800D1C5CF /* VideoFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoFrame.h; sourceTree = "<group>"; };
+		AE6DA1641E7A3D6800D1C5CF /* VideoFrame.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VideoFrame.mm; sourceTree = "<group>"; };
+		AE6DA16D1E7A3DD500D1C5CF /* open_gles20.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = open_gles20.h; path = VideoRender/open_gles20.h; sourceTree = "<group>"; };
+		AE6DA16E1E7A3DD500D1C5CF /* open_gles20.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = open_gles20.mm; path = VideoRender/open_gles20.mm; sourceTree = "<group>"; };
+		AE6DA16F1E7A3DD500D1C5CF /* VideoRenderFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoRenderFrame.h; path = VideoRender/VideoRenderFrame.h; sourceTree = "<group>"; };
+		AE6DA1701E7A3DD500D1C5CF /* VideoRenderFrame.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = VideoRenderFrame.mm; path = VideoRender/VideoRenderFrame.mm; sourceTree = "<group>"; };
+		AE6DA1711E7A3DD500D1C5CF /* VideoRenderIosView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoRenderIosView.h; path = VideoRender/VideoRenderIosView.h; sourceTree = "<group>"; };
+		AE6DA1721E7A3DD500D1C5CF /* VideoRenderIosView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = VideoRenderIosView.mm; path = VideoRender/VideoRenderIosView.mm; sourceTree = "<group>"; };
+		AE6DA1791E7A3DE100D1C5CF /* H264Decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = H264Decoder.h; path = VideoCoding/H264Decoder.h; sourceTree = "<group>"; };
+		AE6DA17A1E7A3DE100D1C5CF /* H264Decoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = H264Decoder.mm; path = VideoCoding/H264Decoder.mm; sourceTree = "<group>"; };
+		AE6DA17B1E7A3DE100D1C5CF /* H264Encoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = H264Encoder.h; path = VideoCoding/H264Encoder.h; sourceTree = "<group>"; };
+		AE6DA17C1E7A3DE100D1C5CF /* H264Encoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = H264Encoder.mm; path = VideoCoding/H264Encoder.mm; sourceTree = "<group>"; };
+		AE6DA17D1E7A3DE100D1C5CF /* H264Packetizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = H264Packetizer.h; path = VideoCoding/H264Packetizer.h; sourceTree = "<group>"; };
+		AE6DA17E1E7A3DE100D1C5CF /* H264Packetizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = H264Packetizer.mm; path = VideoCoding/H264Packetizer.mm; sourceTree = "<group>"; };
+		AE6DA1851E7A3DED00D1C5CF /* VideoCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoCapture.h; path = VideoCapture/VideoCapture.h; sourceTree = "<group>"; };
+		AE6DA1861E7A3DED00D1C5CF /* VideoCapture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = VideoCapture.mm; path = VideoCapture/VideoCapture.mm; sourceTree = "<group>"; };
+		AE6DA1891E7A3DF700D1C5CF /* LocalVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalVideo.h; path = VideoBase/LocalVideo.h; sourceTree = "<group>"; };
+		AE6DA18A1E7A3DF700D1C5CF /* LocalVideo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = LocalVideo.mm; path = VideoBase/LocalVideo.mm; sourceTree = "<group>"; };
+		AE6DA18B1E7A3DF700D1C5CF /* RemoteVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RemoteVideo.h; path = VideoBase/RemoteVideo.h; sourceTree = "<group>"; };
+		AE6DA18C1E7A3DF700D1C5CF /* RemoteVideo.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RemoteVideo.mm; path = VideoBase/RemoteVideo.mm; sourceTree = "<group>"; };
+		AE6DA18D1E7A3DF700D1C5CF /* VideoBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoBase.h; path = VideoBase/VideoBase.h; sourceTree = "<group>"; };
+		AE6DA18E1E7A3DF700D1C5CF /* VideoBase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = VideoBase.mm; path = VideoBase/VideoBase.mm; sourceTree = "<group>"; };
+		AE6DA1971E7A3E3000D1C5CF /* H264Decoderlmpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = H264Decoderlmpl.h; path = VideoCoding/X264/H264Decoderlmpl.h; sourceTree = "<group>"; };
+		AE6DA1981E7A3E3000D1C5CF /* H264Decoderlmpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = H264Decoderlmpl.mm; path = VideoCoding/X264/H264Decoderlmpl.mm; sourceTree = "<group>"; };
+		AE6DA1991E7A3E3000D1C5CF /* H264EncoderImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = H264EncoderImpl.h; path = VideoCoding/X264/H264EncoderImpl.h; sourceTree = "<group>"; };
+		AE6DA19A1E7A3E3000D1C5CF /* H264EncoderImpl.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = H264EncoderImpl.mm; path = VideoCoding/X264/H264EncoderImpl.mm; sourceTree = "<group>"; };
+		AE6DA19F1E7A3E4200D1C5CF /* H264VideoToolboxDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = H264VideoToolboxDecoder.h; path = VideoCoding/VideoToolbox/H264VideoToolboxDecoder.h; sourceTree = "<group>"; };
+		AE6DA1A01E7A3E4200D1C5CF /* H264VideoToolboxDecoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = H264VideoToolboxDecoder.mm; path = VideoCoding/VideoToolbox/H264VideoToolboxDecoder.mm; sourceTree = "<group>"; };
+		AE6DA1A11E7A3E4200D1C5CF /* H264VideoToolboxEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = H264VideoToolboxEncoder.h; path = VideoCoding/VideoToolbox/H264VideoToolboxEncoder.h; sourceTree = "<group>"; };
+		AE6DA1A21E7A3E4200D1C5CF /* H264VideoToolboxEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = H264VideoToolboxEncoder.m; path = VideoCoding/VideoToolbox/H264VideoToolboxEncoder.m; sourceTree = "<group>"; };
+		AE6DA1A31E7A3E4200D1C5CF /* H264VideoToolboxEncoder.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = H264VideoToolboxEncoder.mm; path = VideoCoding/VideoToolbox/H264VideoToolboxEncoder.mm; sourceTree = "<group>"; };
+		AE6DA1A91E7A52C100D1C5CF /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		AE6DA1AA1E7A52C100D1C5CF /* Utils.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Utils.mm; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AE6DA1521E7A3CCD00D1C5CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AE6DA14C1E7A3CCD00D1C5CF = {
+			isa = PBXGroup;
+			children = (
+				AE6DA1581E7A3CCD00D1C5CF /* VideoEngineMgr */,
+				AE6DA1571E7A3CCD00D1C5CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AE6DA1571E7A3CCD00D1C5CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AE6DA1561E7A3CCD00D1C5CF /* VideoEngineMgr.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AE6DA1581E7A3CCD00D1C5CF /* VideoEngineMgr */ = {
+			isa = PBXGroup;
+			children = (
+				AE6DA1611E7A3D6800D1C5CF /* VideoDefines.h */,
+				AE6DA1591E7A3CCD00D1C5CF /* VideoEngineMgr.h */,
+				AE6DA16C1E7A3DB800D1C5CF /* VideoRender */,
+				AE6DA16B1E7A3DA800D1C5CF /* VideoCoding */,
+				AE6DA16A1E7A3D8A00D1C5CF /* VideoCapture */,
+				AE6DA1691E7A3D7A00D1C5CF /* VideoBase */,
+				AE6DA1621E7A3D6800D1C5CF /* VideoEngineMgr.mm */,
+				AE6DA1631E7A3D6800D1C5CF /* VideoFrame.h */,
+				AE6DA1641E7A3D6800D1C5CF /* VideoFrame.mm */,
+				AE6DA1A91E7A52C100D1C5CF /* Utils.h */,
+				AE6DA1AA1E7A52C100D1C5CF /* Utils.mm */,
+				AE6DA15A1E7A3CCD00D1C5CF /* Info.plist */,
+			);
+			path = VideoEngineMgr;
+			sourceTree = "<group>";
+		};
+		AE6DA1691E7A3D7A00D1C5CF /* VideoBase */ = {
+			isa = PBXGroup;
+			children = (
+				AE6DA1891E7A3DF700D1C5CF /* LocalVideo.h */,
+				AE6DA18A1E7A3DF700D1C5CF /* LocalVideo.mm */,
+				AE6DA18B1E7A3DF700D1C5CF /* RemoteVideo.h */,
+				AE6DA18C1E7A3DF700D1C5CF /* RemoteVideo.mm */,
+				AE6DA18D1E7A3DF700D1C5CF /* VideoBase.h */,
+				AE6DA18E1E7A3DF700D1C5CF /* VideoBase.mm */,
+			);
+			name = VideoBase;
+			sourceTree = "<group>";
+		};
+		AE6DA16A1E7A3D8A00D1C5CF /* VideoCapture */ = {
+			isa = PBXGroup;
+			children = (
+				AE6DA1851E7A3DED00D1C5CF /* VideoCapture.h */,
+				AE6DA1861E7A3DED00D1C5CF /* VideoCapture.mm */,
+			);
+			name = VideoCapture;
+			sourceTree = "<group>";
+		};
+		AE6DA16B1E7A3DA800D1C5CF /* VideoCoding */ = {
+			isa = PBXGroup;
+			children = (
+				AE6DA1791E7A3DE100D1C5CF /* H264Decoder.h */,
+				AE6DA17A1E7A3DE100D1C5CF /* H264Decoder.mm */,
+				AE6DA17B1E7A3DE100D1C5CF /* H264Encoder.h */,
+				AE6DA17C1E7A3DE100D1C5CF /* H264Encoder.mm */,
+				AE6DA17D1E7A3DE100D1C5CF /* H264Packetizer.h */,
+				AE6DA17E1E7A3DE100D1C5CF /* H264Packetizer.mm */,
+				AE6DA1961E7A3E0F00D1C5CF /* VideoToolbox */,
+				AE6DA1951E7A3DFE00D1C5CF /* X264 */,
+			);
+			name = VideoCoding;
+			sourceTree = "<group>";
+		};
+		AE6DA16C1E7A3DB800D1C5CF /* VideoRender */ = {
+			isa = PBXGroup;
+			children = (
+				AE6DA16D1E7A3DD500D1C5CF /* open_gles20.h */,
+				AE6DA16E1E7A3DD500D1C5CF /* open_gles20.mm */,
+				AE6DA16F1E7A3DD500D1C5CF /* VideoRenderFrame.h */,
+				AE6DA1701E7A3DD500D1C5CF /* VideoRenderFrame.mm */,
+				AE6DA1711E7A3DD500D1C5CF /* VideoRenderIosView.h */,
+				AE6DA1721E7A3DD500D1C5CF /* VideoRenderIosView.mm */,
+			);
+			name = VideoRender;
+			sourceTree = "<group>";
+		};
+		AE6DA1951E7A3DFE00D1C5CF /* X264 */ = {
+			isa = PBXGroup;
+			children = (
+				AE6DA1971E7A3E3000D1C5CF /* H264Decoderlmpl.h */,
+				AE6DA1981E7A3E3000D1C5CF /* H264Decoderlmpl.mm */,
+				AE6DA1991E7A3E3000D1C5CF /* H264EncoderImpl.h */,
+				AE6DA19A1E7A3E3000D1C5CF /* H264EncoderImpl.mm */,
+			);
+			name = X264;
+			sourceTree = "<group>";
+		};
+		AE6DA1961E7A3E0F00D1C5CF /* VideoToolbox */ = {
+			isa = PBXGroup;
+			children = (
+				AE6DA19F1E7A3E4200D1C5CF /* H264VideoToolboxDecoder.h */,
+				AE6DA1A01E7A3E4200D1C5CF /* H264VideoToolboxDecoder.mm */,
+				AE6DA1A11E7A3E4200D1C5CF /* H264VideoToolboxEncoder.h */,
+				AE6DA1A21E7A3E4200D1C5CF /* H264VideoToolboxEncoder.m */,
+				AE6DA1A31E7A3E4200D1C5CF /* H264VideoToolboxEncoder.mm */,
+			);
+			name = VideoToolbox;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AE6DA1531E7A3CCD00D1C5CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE6DA1931E7A3DF700D1C5CF /* VideoBase.h in Headers */,
+				AE6DA15B1E7A3CCD00D1C5CF /* VideoEngineMgr.h in Headers */,
+				AE6DA19B1E7A3E3000D1C5CF /* H264Decoderlmpl.h in Headers */,
+				AE6DA1731E7A3DD500D1C5CF /* open_gles20.h in Headers */,
+				AE6DA1911E7A3DF700D1C5CF /* RemoteVideo.h in Headers */,
+				AE6DA1831E7A3DE100D1C5CF /* H264Packetizer.h in Headers */,
+				AE6DA1671E7A3D6800D1C5CF /* VideoFrame.h in Headers */,
+				AE6DA1A61E7A3E4200D1C5CF /* H264VideoToolboxEncoder.h in Headers */,
+				AE6DA1A41E7A3E4200D1C5CF /* H264VideoToolboxDecoder.h in Headers */,
+				AE6DA18F1E7A3DF700D1C5CF /* LocalVideo.h in Headers */,
+				AE6DA17F1E7A3DE100D1C5CF /* H264Decoder.h in Headers */,
+				AE6DA19D1E7A3E3000D1C5CF /* H264EncoderImpl.h in Headers */,
+				AE6DA1AB1E7A52C100D1C5CF /* Utils.h in Headers */,
+				AE6DA1871E7A3DED00D1C5CF /* VideoCapture.h in Headers */,
+				AE6DA1651E7A3D6800D1C5CF /* VideoDefines.h in Headers */,
+				AE6DA1751E7A3DD500D1C5CF /* VideoRenderFrame.h in Headers */,
+				AE6DA1771E7A3DD500D1C5CF /* VideoRenderIosView.h in Headers */,
+				AE6DA1811E7A3DE100D1C5CF /* H264Encoder.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		AE6DA1551E7A3CCD00D1C5CF /* VideoEngineMgr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AE6DA15E1E7A3CCD00D1C5CF /* Build configuration list for PBXNativeTarget "VideoEngineMgr" */;
+			buildPhases = (
+				AE6DA1511E7A3CCD00D1C5CF /* Sources */,
+				AE6DA1521E7A3CCD00D1C5CF /* Frameworks */,
+				AE6DA1531E7A3CCD00D1C5CF /* Headers */,
+				AE6DA1541E7A3CCD00D1C5CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VideoEngineMgr;
+			productName = VideoEngineMgr;
+			productReference = AE6DA1561E7A3CCD00D1C5CF /* VideoEngineMgr.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AE6DA14D1E7A3CCD00D1C5CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = whw;
+				TargetAttributes = {
+					AE6DA1551E7A3CCD00D1C5CF = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = E879673BM5;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = AE6DA1501E7A3CCD00D1C5CF /* Build configuration list for PBXProject "VideoEngineMgr" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = AE6DA14C1E7A3CCD00D1C5CF;
+			productRefGroup = AE6DA1571E7A3CCD00D1C5CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AE6DA1551E7A3CCD00D1C5CF /* VideoEngineMgr */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AE6DA1541E7A3CCD00D1C5CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AE6DA1511E7A3CCD00D1C5CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AE6DA19E1E7A3E3000D1C5CF /* H264EncoderImpl.mm in Sources */,
+				AE6DA1881E7A3DED00D1C5CF /* VideoCapture.mm in Sources */,
+				AE6DA19C1E7A3E3000D1C5CF /* H264Decoderlmpl.mm in Sources */,
+				AE6DA1801E7A3DE100D1C5CF /* H264Decoder.mm in Sources */,
+				AE6DA1741E7A3DD500D1C5CF /* open_gles20.mm in Sources */,
+				AE6DA1AC1E7A52C100D1C5CF /* Utils.mm in Sources */,
+				AE6DA1A81E7A3E4200D1C5CF /* H264VideoToolboxEncoder.mm in Sources */,
+				AE6DA1921E7A3DF700D1C5CF /* RemoteVideo.mm in Sources */,
+				AE6DA1A71E7A3E4200D1C5CF /* H264VideoToolboxEncoder.m in Sources */,
+				AE6DA1761E7A3DD500D1C5CF /* VideoRenderFrame.mm in Sources */,
+				AE6DA1A51E7A3E4200D1C5CF /* H264VideoToolboxDecoder.mm in Sources */,
+				AE6DA1661E7A3D6800D1C5CF /* VideoEngineMgr.mm in Sources */,
+				AE6DA1821E7A3DE100D1C5CF /* H264Encoder.mm in Sources */,
+				AE6DA1781E7A3DD500D1C5CF /* VideoRenderIosView.mm in Sources */,
+				AE6DA1681E7A3D6800D1C5CF /* VideoFrame.mm in Sources */,
+				AE6DA1841E7A3DE100D1C5CF /* H264Packetizer.mm in Sources */,
+				AE6DA1941E7A3DF700D1C5CF /* VideoBase.mm in Sources */,
+				AE6DA1901E7A3DF700D1C5CF /* LocalVideo.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AE6DA15C1E7A3CCD00D1C5CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		AE6DA15D1E7A3CCD00D1C5CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AE6DA15F1E7A3CCD00D1C5CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = E879673BM5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				GCC_PREPROCESSOR_DEFINITIONS = NOLOG;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/VideoEngineMgr/ThridParty/libyuv/include\"",
+					"\"$(SRCROOT)/VideoEngineMgr/ThridParty/x264/include\"",
+					"\"$(SRCROOT)/VideoEngineMgr/ThridParty/ffmpeg/include\"",
+				);
+				INFOPLIST_FILE = VideoEngineMgr/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = VideoEngineMgr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		AE6DA1601E7A3CCD00D1C5CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CODE_SIGN_IDENTITY = "";
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = E879673BM5;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
+				GCC_PREPROCESSOR_DEFINITIONS = NOLOG;
+				HEADER_SEARCH_PATHS = (
+					"\"$(SRCROOT)/VideoEngineMgr/ThridParty/libyuv/include\"",
+					"\"$(SRCROOT)/VideoEngineMgr/ThridParty/x264/include\"",
+					"\"$(SRCROOT)/VideoEngineMgr/ThridParty/ffmpeg/include\"",
+				);
+				INFOPLIST_FILE = VideoEngineMgr/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				PRODUCT_BUNDLE_IDENTIFIER = VideoEngineMgr;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AE6DA1501E7A3CCD00D1C5CF /* Build configuration list for PBXProject "VideoEngineMgr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE6DA15C1E7A3CCD00D1C5CF /* Debug */,
+				AE6DA15D1E7A3CCD00D1C5CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE6DA15E1E7A3CCD00D1C5CF /* Build configuration list for PBXNativeTarget "VideoEngineMgr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE6DA15F1E7A3CCD00D1C5CF /* Debug */,
+				AE6DA1601E7A3CCD00D1C5CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AE6DA14D1E7A3CCD00D1C5CF /* Project object */;
+}
