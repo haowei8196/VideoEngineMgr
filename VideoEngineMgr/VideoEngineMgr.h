@@ -24,8 +24,9 @@
 - (void)clear;
 
 
-- (int)playVideo:(int)uid Window:(UIView*)window Scaling:(int)scaling;
+- (int)playVideo:(int)uid Window:(UIView*)window RenderMode:(RenderMode)mode;
 - (void)unPlayVideo:(int)uid;
+- (int)updateRenderView:(int)uid window:(UIView *)view;
 
 
 - (void)receivedPacket:(int)uid Data:(unsigned char*)data Length:(int)len TimeStamp:(unsigned int)ts;
@@ -35,8 +36,8 @@
 - (void)stopSend;
 
 - (void)swichCamera;
-- (int)updateRenderView:(int)uid window:(UIView *)view;
-- (void)setVideoParam:(CGSize)resolution FPS:(int)fps;
+
+- (void)setVideoProfile:(VideoProfile)profile;
 
 //拍照
 - (void)takePhoto:(int)size Complete:(void(^)(UIImage*, NSError*))complete;

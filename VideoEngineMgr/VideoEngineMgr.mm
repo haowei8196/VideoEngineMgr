@@ -161,14 +161,13 @@ VideoEngineMgr *VideoEngineMgrInstance = nil;
     }
 }
 
-
-- (int)playVideo:(int)uid Window:(UIView*)window Scaling:(int)scaling
+- (int)playVideo:(int)uid Window:(UIView*)window RenderMode:(RenderMode)mode
 {
     if (uid == _uid)
     {
         if (_localvideo && _localvideo.isWatching)
         {
-            [_localvideo setScaling:scaling];
+            [_localvideo setScaling:mode];
 //            [_localvideo resumeWatchSelf:window];
            
             return [_localvideo.channelid intValue];
@@ -176,7 +175,7 @@ VideoEngineMgr *VideoEngineMgrInstance = nil;
         if (_videoFPS != 0 && _videoSize.width != 0 && _videoSize.height != 0) {
             [self setVideoParam:_videoSize FPS:_videoFPS];
         }
-        if ([_localvideo StartRender:window Scaling:scaling] == -1)
+        if ([_localvideo StartRender:window Scaling:mode] == -1)
             return -1;
         return [_localvideo.channelid intValue];
     }
@@ -185,7 +184,7 @@ VideoEngineMgr *VideoEngineMgrInstance = nil;
         RemoteVideo* task = [self getRemoteVideo:uid];
         if(task != nil)
         {
-            [task setScaling:scaling];
+            [task setScaling:mode];
 //            [task resume:window];
             return [[task channelid] intValue];
         }
@@ -199,7 +198,7 @@ VideoEngineMgr *VideoEngineMgrInstance = nil;
             [VideoBase ReleaseChannel:channelid];
             return -1;
         }
-        if ([task StartRender:window Scaling:scaling] == -1)
+        if ([task StartRender:window Scaling:mode] == -1)
             return -1;
         return [channelid intValue];
     }
@@ -261,6 +260,61 @@ VideoEngineMgr *VideoEngineMgrInstance = nil;
         }
         return -1;
     }
+}
+- (void)setVideoProfile:(VideoProfile)profile
+{
+    CGSize size = CGSizeZero;
+    int fps = 15;
+    switch (profile) {
+        case Video_192X144:
+        {
+            size = CGSizeMake(192, 144);
+            fps = 15;
+        } break;
+        case Video_352X288:
+        {
+            size = CGSizeMake(352, 288);
+            fps = 15;
+        } break;
+        case Video_640X480_15:
+        {
+            size = CGSizeMake(640, 480);
+            fps = 15;
+        } break;
+        case Video_640X480_30:
+        {
+            size = CGSizeMake(640, 480);
+            fps = 30;
+        } break;
+        case Video_1280X720_15:
+        {
+            size = CGSizeMake(1280, 720);
+            fps = 15;
+        } break;
+        case Video_1280X720_30:
+        {
+            size = CGSizeMake(1280, 720);
+            fps = 30;
+        } break;
+        case Video_1920X1080_15:
+        {
+            size = CGSizeMake(1920, 1080);
+            fps = 15;
+        } break;
+        case Video_1920X1080_30:
+        {
+            size = CGSizeMake(1920, 1080);
+            fps = 30;
+        } break;
+        default:
+        {
+            size = CGSizeMake(352, 288);
+            break;
+        }
+    }
+    AVLogInfo(@"Resolution: %@ FPS: %d", NSStringFromCGSize(resolution), fps);
+    
+    [self setVideoParam:size FPS:fps];
 }
 - (void)setVideoParam:(CGSize)resolution FPS:(int)fps
 {
