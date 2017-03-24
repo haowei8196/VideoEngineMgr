@@ -18,8 +18,6 @@
 - (id)initWithDelegate:(id)delegate Channel:(NSNumber*)channel;
 
 - (BOOL)isWatching;
-- (void)pauseWatchSelf;
-- (void)resumeWatchSelf:(UIView*)window;
 - (uint32_t)startSend;
 - (uint32_t)stopSend;
 

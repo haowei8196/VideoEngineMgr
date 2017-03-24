@@ -74,6 +74,7 @@
 }
 - (int)StartRender:(UIView*)parentView Scaling:(int)scaling
 {
+    self.scalingType = scaling;
     dispatch_async(dispatch_get_main_queue(), ^{
         
         if(parentView == nil || _renderFrame != nil)

@@ -81,20 +81,19 @@
 {
     int res = 0;
     res = [self StartCapture:_useFrontCamera];
+    self.scalingType = scaling;
     if (parentView) {
         dispatch_sync(dispatch_get_main_queue(), ^{
             _renderFrame = [[VideoRenderFrame alloc] initWithParent:parentView Preview:_videoStream.previewLayer];
             [_renderFrame setScalingType:scaling];
         });
     }
-    //[_videoStream Preview:window];
     _watching = YES;
     return res;
 }
 - (void)StopRender
 {
     _watching = NO;
-    //[_videoStream StopPreview];
     dispatch_sync(dispatch_get_main_queue(), ^{
         [_renderFrame removeFromSuperview];
         _renderFrame = nil;
@@ -105,16 +104,15 @@
 {
     return _watching;
 }
-- (void)pauseWatchSelf
+- (void)pause
 {
-    //[_videoStream StopPreview];
+    [self StopRender];
 }
 
-- (void)resumeWatchSelf:(UIView*)window
+- (void)resume:(UIView*)window
 {
     if (_videoStream != nil && _watching)
     {
-//        [_videoStream Preview:window];
         if (window && _displayView != window) {
             _displayView = window;
             dispatch_sync(dispatch_get_main_queue(), ^{
@@ -132,14 +130,8 @@
 {
     [self StartSender];
     
-    //if(!self.videoStream)
-    //{
-        [self StartCapture:_useFrontCamera];
-    //}
-//    else
-//    {
-//        [self changeCamera:_useFrontCamera];
-//    }
+    [self StartCapture:_useFrontCamera];
+
     _sending = YES;
     return 0;
 }

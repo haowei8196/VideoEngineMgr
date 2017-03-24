@@ -21,7 +21,6 @@
 @property (nonatomic, strong) NSLock*                remotevideoLock;
 @property (nonatomic) CGSize videoSize;
 @property (nonatomic) int videoFPS;
-@property (nonatomic, strong) UIView *displayView;
 @end
 
 VideoEngineMgr *VideoEngineMgrInstance = nil;
@@ -154,7 +153,6 @@ VideoEngineMgr *VideoEngineMgrInstance = nil;
         task = [_remotevideos objectForKey:@(uid)];
         _receive_bytes_video += len;
     }
-//    RemoteVideo* task = [self getRemoteVideo:uid];
     if(task != nil)
     {
         [task putPacket:data Len:len Ts:ts];
@@ -167,9 +165,6 @@ VideoEngineMgr *VideoEngineMgrInstance = nil;
     {
         if (_localvideo && _localvideo.isWatching)
         {
-            [_localvideo setScaling:mode];
-//            [_localvideo resumeWatchSelf:window];
-           
             return [_localvideo.channelid intValue];
         }
         if (_videoFPS != 0 && _videoSize.width != 0 && _videoSize.height != 0) {
@@ -184,8 +179,6 @@ VideoEngineMgr *VideoEngineMgrInstance = nil;
         RemoteVideo* task = [self getRemoteVideo:uid];
         if(task != nil)
         {
-            [task setScaling:mode];
-//            [task resume:window];
             return [[task channelid] intValue];
         }
         
@@ -244,22 +237,18 @@ VideoEngineMgr *VideoEngineMgrInstance = nil;
 
 - (int)updateRenderView:(int)uid window:(UIView *)view
 {
+    VideoBase* video = nil;
     if (_uid == uid) {
-        if (_localvideo && _localvideo.isWatching)
-        {
-            [_localvideo resumeWatchSelf:view];
-            return [_localvideo.channelid intValue];
-        }
-        return -1;
+        video = _localvideo;
     } else {
-        RemoteVideo* task = [self getRemoteVideo:uid];
-        if(task != nil)
-        {
-            [task resume:view];
-            return [[task channelid] intValue];
-        }
-        return -1;
+        video = [self getRemoteVideo:uid];
     }
+    if (video)
+    {
+        [video resume:view];
+        return [video.channelid intValue];
+    }
+    return -1;
 }
 - (void)setVideoProfile:(VideoProfile)profile
 {
