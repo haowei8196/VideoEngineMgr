@@ -45,6 +45,7 @@ else\
 + (NSUInteger)cpuCount;
 + (long)now_ms;
 + (int)calcBiteRate:(int)w heght:(int)h fps:(int)fps;
++ (void)syncOnUiThread:(dispatch_block_t) block;
 @end
 
 @interface Timer : NSObject

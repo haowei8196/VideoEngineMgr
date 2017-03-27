@@ -85,11 +85,7 @@ static NSMutableArray*         _freeChannels = nil;
 
 - (void)StopRender
 {
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        
-        [_renderFrame removeFromSuperview];
-        _renderFrame = nil;
-    });
+
 }
 
 - (void)Pause

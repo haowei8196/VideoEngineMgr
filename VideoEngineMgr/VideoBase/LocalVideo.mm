@@ -39,7 +39,6 @@
 @property (nonatomic, strong) VideoCapture *videoStream;
 @property (nonatomic, strong) H264Encoder *encoder;
 @property (nonatomic, weak) id<VideoTransport> delegate;
-@property (nonatomic, strong) UIView *displayView;
 @end
 
 @implementation LocalVideo
@@ -79,26 +78,35 @@
 }
 - (int)StartRender:(UIView *)parentView Scaling:(int)scaling
 {
-    int res = 0;
-    res = [self StartCapture:_useFrontCamera];
-    self.scalingType = scaling;
-    if (parentView) {
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            _renderFrame = [[VideoRenderFrame alloc] initWithParent:parentView Preview:_videoStream.previewLayer];
-            [_renderFrame setScalingType:scaling];
-        });
-    }
+    int res = [self StartCapture:_useFrontCamera];
+    [self startRender:parentView Scaling:scaling];
     _watching = YES;
     return res;
 }
 - (void)StopRender
 {
     _watching = NO;
-    dispatch_sync(dispatch_get_main_queue(), ^{
+    [self stopRender];
+    [self CheckIfNeedToStop];
+}
+- (void)startRender:(UIView *)parentView Scaling:(int)scaling
+{
+    self.scalingType = scaling;
+    if (parentView) {
+        [Utils syncOnUiThread:^{
+            _renderFrame = [[VideoRenderFrame alloc] initWithParent:parentView Preview:_videoStream.previewLayer];
+            [_renderFrame setScalingType:scaling];
+            self.displayView = parentView;
+        }];
+    }
+}
+- (void)stopRender
+{
+    [Utils syncOnUiThread:^{
         [_renderFrame removeFromSuperview];
         _renderFrame = nil;
-    });
-    [self CheckIfNeedToStop];
+        self.displayView = nil;
+    }];
 }
 - (BOOL)isWatching
 {
@@ -106,23 +114,19 @@
 }
 - (void)pause
 {
-    [self StopRender];
+    [self stopRender];
 }
 
 - (void)resume:(UIView*)window
 {
-    if (_videoStream != nil && _watching)
+    if (_watching)
     {
-        if (window && _displayView != window) {
-            _displayView = window;
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                if (_renderFrame) {
-                    [_renderFrame removeFromSuperview];
-                    _renderFrame = nil;
-                }
-            });
-            [self StartRender:window Scaling:self.scalingType];
-        }
+        [Utils syncOnUiThread:^{
+            if (window && self.displayView != window) {
+                [self stopRender];
+                [self startRender:window Scaling:self.scalingType];
+            }
+        }];
     }
 }
 

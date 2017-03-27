@@ -14,13 +14,12 @@
 #import "H264Decoder.h"
 #import "VideoEngineMgr.h"
 #import "VideoRenderFrame.h"
-
+#import "Utils.h"
 
 @interface RemoteVideo ()<H264DecoderDelegate>
 
 @property (nonatomic, strong) H264Decoder *decoder;
 @property (nonatomic, weak) id<VideoDelegate> delegate;
-@property (nonatomic, strong) UIView *displayView;
 @end
 
 @implementation RemoteVideo
@@ -60,34 +59,37 @@
 
 - (void)resume:(UIView*)window
 {
-    //[self StartRender:window];
-    if (window && _displayView != window) {
-        _displayView = window;
-        dispatch_sync(dispatch_get_main_queue(), ^{
-            if (_renderFrame) {
-                [_renderFrame removeFromSuperview];
-                _renderFrame = nil;
-            }
-        });
-        [self StartRender:window Scaling:self.scalingType];
-    }
+    [Utils syncOnUiThread:^{
+        if (window && self.displayView != window) {
+            [self StopRender];
+            [self StartRender:window Scaling:self.scalingType];
+        }
+    }];
 }
 - (int)StartRender:(UIView*)parentView Scaling:(int)scaling
 {
     self.scalingType = scaling;
-    dispatch_async(dispatch_get_main_queue(), ^{
+    [Utils syncOnUiThread:^{
         
         if(parentView == nil || _renderFrame != nil)
             return;
         VideoRenderFrame *renderFrame = [[VideoRenderFrame alloc] initWithParent:parentView Preview:nil];
         _renderFrame = renderFrame;
         [_renderFrame setScalingType:scaling];
-    });
+        self.displayView = parentView;
+    }];
     return 0;
+}
+- (void)StopRender
+{
+    [Utils syncOnUiThread:^{
+        [_renderFrame removeFromSuperview];
+        _renderFrame = nil;
+        self.displayView = nil;
+    }];
 }
 - (void)lowBandWidth
 {
-    //[[VideoEngineMgr Instance] onInnerWarning:3];
 }
 
 #pragma mark - video from network

@@ -24,7 +24,7 @@
 @property (nonatomic, strong) NSNumber* channelid;
 @property (nonatomic)        uint32_t  bandwidth;//in bps
 @property (nonatomic)        int scalingType;//0：等比拉伸，1：等比拉伸占满全屏，2：不等比拉伸占满全屏
-
+@property (nonatomic, strong) UIView *displayView;
 + (void)Initialize;
 + (NSNumber*)CreateChannel;
 + (void)ReleaseChannel:(NSNumber*)channelid;
